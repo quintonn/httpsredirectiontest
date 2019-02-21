@@ -17,6 +17,10 @@ namespace HttpsRedirectionTest
             });
 
             services.AddHttpContextAccessor();
+            services.AddHttpsRedirection(x =>
+            {
+                x.HttpsPort = 5022;
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
