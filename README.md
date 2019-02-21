@@ -18,7 +18,9 @@ But if I replace it with the following code, it doesn't work:
 ```
 services.AddMvc();
 ```
-This code should not be required, what's the point of all the https redirection code?
+The SslPort is not documented as part of setting up https redirection.
+Also, why do i need it, i've specified which URL's i'm using and i've got my RequireHttps attributes.
+If this is required (which i understand), it should probably use the value from services.AddHttpsRedirection, makes more sense.
 
 
 ## Another Issue:
