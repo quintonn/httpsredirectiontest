@@ -19,7 +19,7 @@ namespace HttpsRedirectionTest
             services.AddHttpContextAccessor();
             services.AddHttpsRedirection(x =>
             {
-                x.HttpsPort = 5022;
+                x.HttpsPort = 5022; // this is not used, has no effect at all.
             });
         }
 
