@@ -10,7 +10,7 @@ The above all works if I include this in my Startup file:
 ```
 services.AddMvcCore(x =>
 {
-    x.SslPort = 5021; // Problem: I have to configure this port here and in Program.cs. Why is this necessary?
+    x.SslPort = 5001; // Problem: I have to configure this port here and in Program.cs. Why is this necessary?
 });
 ```
 
