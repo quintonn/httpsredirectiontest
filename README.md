@@ -1,6 +1,11 @@
 # https Redirection Test
 To test https redirection in .net core where i think is a bug or an undocumented requirement
 
+## Update: 
+I have added 2 configurable scenarios to the code which tests 2 different ways of setting up http redirection.
+The biggest difference seems to be calling **app.UseMvc()** before or after calling **app.UseHttpsRedirection()**
+
+
 ### Expected behaviour:
 - [x] Browse to http://localhost:5020/basic/test1 and see "http method -> Ok, it works".
 - [ ] Browse to http://localhost:5020/basic/test2 and be redirected to https://localhost:5021/basic/test2 and see "httpS method -> Ok, it works" 
@@ -28,7 +33,7 @@ This code seems to do absolutely nothing (with or without previous piece of code
 ```
 services.AddHttpsRedirection(x =>
 {
-    x.HttpsPort = 5022;
+    x.HttpsPort = 5001;
 });
 ```
 What is the point of this code, why does it exist?
