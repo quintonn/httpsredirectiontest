@@ -8,7 +8,7 @@ namespace HttpsRedirectionTest
         public static void Main(string[] args)
         {
             new WebHostBuilder()
-                  //.UseUrls("https://localhost:5021", "http://localhost:5020")
+                  .UseUrls("https://localhost:5001", "http://localhost:5000", "https://localhost:5021", "http://localhost:5020")
                   .ConfigureLogging((hostingContext, logging) =>
                   {
                       logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
