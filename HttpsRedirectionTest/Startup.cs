@@ -13,14 +13,14 @@ namespace HttpsRedirectionTest
             /* This works */
             services.AddMvcCore(x =>
             {
-                x.SslPort = 5021; // Problem: I have to configure this port here and in Program.cs. Why is this necessary?
+                //x.SslPort = 5021; // Problem: I have to configure this port here and in Program.cs. Why is this necessary?
             });
 
-            services.AddHttpContextAccessor();
-            services.AddHttpsRedirection(x =>
-            {
-                x.HttpsPort = 5022; // this is not used, has no effect at all.
-            });
+            //services.AddHttpContextAccessor();
+            //services.AddHttpsRedirection(x =>
+            //{
+            //    x.HttpsPort = 5022; // this is not used, has no effect at all.
+            //});
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -32,7 +32,6 @@ namespace HttpsRedirectionTest
 
             app.UseMvc();
             app.UseHttpsRedirection();
-            
         }
     }
 }
